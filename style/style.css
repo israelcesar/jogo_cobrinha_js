@@ -1,13 +1,16 @@
-body {
+*{
     margin: 0%;
     padding: 0%;
+}
 
+body {
+    margin-top: 5px;
     height: 90vh;
     width: auto;
     
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     color: white;
 
     background-color: gray;
@@ -19,7 +22,7 @@ h1 {
 
 .creditos {
     margin-top: 0;
-    font-size: 13px;
+    font-size: 9px;
 }
 
 .jogo {
@@ -32,7 +35,7 @@ h1 {
 .pontuacao {
     font-size: 20px;
     background-color: #0A2642;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -42,6 +45,7 @@ h1 {
 }
 
 #snake {
+    margin: 5px 0;
     border-radius: 8px;
     border: 1px solid rgb(20, 20, 20);
 }
