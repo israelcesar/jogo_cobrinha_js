@@ -11,6 +11,7 @@ let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
 }
+let pontos = 0;
 
 function criarBG() {
     context.fillStyle = "aquamarine";
@@ -39,11 +40,18 @@ function update(event) {
 }
 
 function iniciarJogo() {
-
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 15 * box;
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
     if(snake[0].y < 0 && direction == "up") snake[0].y = 15 * box;
+
+    for(i = 1; i < snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval(jogo);
+            alert("Game over :'( \n Você fez " + pontos + " pontos.");
+            location.reload(false);
+        }
+    }
 
     criarBG();
     criarCobrinha();
@@ -63,6 +71,9 @@ function iniciarJogo() {
     else{
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        
+        pontos++;
+        document.getElementById("pontuacao").innerHTML = ("Pontuação: " + pontos);
     }    
 
     let newHead = {
